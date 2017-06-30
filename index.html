@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, intial-scale=1">
+		<!-- Bootstrap Style Sheet -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<!-- The Script Bellow Controls The Nav Bar -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style>
+		
+			body, html {
+				height: 100%;
+			
+			}
+		
+			.navbar{
+				background-color: #ad362b;
+			}
+			
+			.navbar .navbar-brand{
+				color: white;
+			}
+		
+			#home{                 /* This Is A Hero Image */
+				background-image: url("http://res.cloudinary.com/blaqcode/image/upload/v1498774871/mario-1557975_1920_k1tn3w.jpg");
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				position: relative;
+				height: 100%;
+				background-attachment: fixed;
+				
+				
+			}
+			
+			.homeText{
+				color: white;
+				text-align: center;
+				margin-top: 260px;
+				text-shadow: 2px 2px black;
+			}
+			
+			#about{
+				background-image: url("http://res.cloudinary.com/blaqcode/image/upload/v1498780566/christian-gertenbach-192353_vzzdkk.jpg");
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				position: relative;
+				height: 100%;
+				background-attachment: fixed;
+			}
+			
+			.aboutText{
+				text-align: center;
+				color: white;
+				text-shadow: 2px 2px black;
+				margin-top: 80px;
+			}
+			
+			#contact{
+				background-image: url("http://res.cloudinary.com/blaqcode/image/upload/v1498782798/justin-main-189752_xevvja.jpg");
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				position: relative;
+				height: 100%;
+				background-attachment: fixed;
+			}
+			
+			.contactText{
+				text-align: center;
+				
+			}
+			
+			form{
+				margin-top: 200px;
+				width: 50%;
+				color: white;
+				
+			}
+			
+			#footer{
+				margin-top: 100px;
+				text-align: center;
+				
+			}
+			
+		</style>
+	</head>
+	
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>                        
+					</button>
+					<a class="navbar-brand" href="index.html">Mario's Party</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<div id="home" class="container-fluid">
+			<div class="homeText">
+				<h1>You're Invited To Mario's Party!</h1>
+				<button type="button" class="btn btn-info"><a href="#about">More Info!</a></button>
+			</div>
+		</div>
+		
+		<div id="about" class="container-fluid">
+			<div class="aboutText">
+				<h1>We're Going To Party, HARD!</h1>
+					<div>
+						<h3>Beer, Cosplay, Music, Snacks, and tons of Video Games!</h3>
+					</div>
+					
+					<div>
+						<h4>And it's all going down at the MGM Grand Hotel, this Saturday, 8:00 PM sharp!
+							R.S.V.P. For more info!
+						</h4>
+					</div>
+					<button type="button" class="btn btn-info"><a href="#contact">RSVP</a></button>
+			</div>
+		</div>
+		
+		<div id="contact" class="container-fluid">
+			<div class="contactText">
+				<center>
+				<form>	
+					<div class="form-group">
+						<label for="name">Name</label>
+						<input type="name" class="form-control" id="name" placeholder="Name">
+					</div>
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="email" class="form-control" id="email" placeholder="Email">
+					</div>
+					<button type="submit" class="btn btn-info">Submit</button>
+				</form>	
+				</center>
+			</div>
+			<div class="container-fluid" id="footer">
+				<div class="span12">	
+					<p>
+						Coded by <a href="https://arkayde.github.io/BlaqCode/#home">BlaqCode</a>
+					</p>
+				</div>	
+			</div>
+		</div>
+		
+		
+		<script>
+$(document).ready(function(){
+  // Add scrollspy to <body>
+  $('body').scrollspy({target: ".navbar", offset: 50});   
+
+  // Add smooth scrolling on all links inside the navbar
+  $("#myNavbar a").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    }  // End if
+  });
+});
+
+</script>
+	</body>
+</html>
